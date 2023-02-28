@@ -9,8 +9,13 @@ let file_mode = false,
 
 const E_VAL = document.getElementById('eps')
 
-function validateE() {
+function randInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+function validateE() {
     if (isNaN(E_VAL.value) || E_VAL.value == '') {
         oops('Некоректное значение \\(\\epsilon\\)')
         MathJax.typeset()
@@ -183,6 +188,13 @@ const roll = document.getElementById("roll")
     
 roll.oninput = function() {
     document.getElementById('get_val').value = roll.value
+}
+
+
+function generate_matrix() {
+    document.querySelectorAll('.element').forEach(elem => {
+        elem.value = randInt(-100, 100)
+    })
 }
 
 

@@ -13,7 +13,6 @@ def index():
 def exec():
     try:
         content = request.get_json()
-        print(content)
         return jsonify(results = worker(content['E'], content['num'], content['matrixA'], content['matrixB']))
 
     except Exception as ex:
