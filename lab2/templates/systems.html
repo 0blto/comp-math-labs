@@ -1,0 +1,38 @@
+
+
+<div class="menu">
+    <div class="choose-block">
+        <h4 style="margin-bottom: 15px;">Выбор системы</h4>
+        <div class="system chooseable">
+            <input class="box" type="radio" name="systems" value="1" checked>
+            <div></div>
+            <span class="target">$$ \begin{cases}
+                3x + 5y + z = 3\\
+                7x - 2y + 4z = 4
+                \end{cases} $$</span>
+        </div>
+        <div class="system chooseable">
+            <input class="box" type="radio" name="systems" value="2">
+            <div></div>
+            <span class="target">$$ \begin{cases}
+                3x + 5y + z = 3\\
+                7x - 2y + 4z = 4
+                \end{cases} $$</span>
+        </div>
+    </div>
+    <div class="choose-block2">
+        <div class="field2">
+            <div style="display: flex; justify-content: flex-start;"><span>Интервал поиска </span><span>[</span><input class="interval" id="int1" type="text"> 
+                <span>;</span> <input class="interval" id="int2" type="text"> <span>]</span></div>
+        </div>
+        <div class="field2">
+            Точность \(\epsilon = \) <input class="eps" id="eps" type="text" value="0.01" required="required">
+        </div>
+    </div>
+    <div class="choose-block">
+        <div class="field" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+            <button onclick="solveSystem()" class="exec-btn">Рассчитать</button>
+        </div>
+    </div>
+</div>
+<div class="answer"></div>
