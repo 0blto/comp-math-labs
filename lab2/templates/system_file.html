@@ -1,0 +1,31 @@
+<h2>System from file</h2>
+<div>
+    <h3>File format</h3>
+    <p>Файл содержит 4 числа: 
+        <ul>
+            <li>Номер системы:
+                <ol> 
+                    <li>\( \begin{cases}
+                        3x + 5y + z = 3\\
+                        7x - 2y + 4z = 4
+                        \end{cases} \)</li>
+                    <li>\( \begin{cases}
+                        3x + 5y + z = 3\\
+                        7x - 2y + 4z = 4
+                        \end{cases} \)</li>
+                </ol>
+            </li>
+            <li>Начало и конец промежутка (конец строго больше начала)</li>
+            <li>Точность \(\epsilon\)</li>
+        </ul>
+    </p>
+    
+</div>
+<div id="file-input">
+    <input type="file" style="z-index: 1000;" onchange="systemFromFile(this)">
+</div>
+<div class="answer">
+    <div class="result"></div>
+    <div class="plot"></div>
+    <div class="table"></div>
+</div>

@@ -1,0 +1,78 @@
+
+<div class="menu">
+    <div class="choose-block">
+        <h4 style="margin-bottom: 15px;">Выбор уравнения</h4>
+        <div class="equation chooseable">
+            <input class="box" type="radio" name="equations" value="1" checked>
+            <div></div>
+            <span class="target">$$2.3x^3+5.75x^2-7.41x-10.6$$</span>
+        </div>
+        <div class="equation chooseable">
+            <input class="box" type="radio" name="equations" value="2">
+            <div></div>
+            <span class="target">$$x^3-x+4$$</span>
+        </div>
+        <div class="equation chooseable">
+            <input class="box" type="radio" name="equations" value="3">
+            <div></div>
+            <span class="target">$$\frac{2}{e^x}$$</span>
+        </div>
+        <div class="equation chooseable">
+            <input class="box" type="radio" name="equations" value="4">
+            <div></div>
+            <span class="target">$$\frac{1}{x}$$</span>
+        </div>
+        <div class="equation chooseable">
+            <input class="box" type="radio" name="equations" value="5">
+            <div></div>
+            <span class="target">$$\frac{x^2}{x^3-1}$$</span>
+        </div>
+    </div>
+    <div class="choose-block">
+        <h4 style="margin-bottom: 15px;">Выбор метода</h4>
+        <div class="chooseable">
+            <input class="box" type="radio" name="method" value="1" checked>
+            <div></div>
+            <span class="target">Метод прямоугольников (п)</span>
+        </div>
+        <div class="chooseable">
+            <input class="box" type="radio" name="method" value="2">
+            <div></div>
+            <span class="target">Метод прямоугольников (л)</span>
+        </div>
+        <div class="chooseable">
+            <input class="box" type="radio" name="method" value="3">
+            <div></div>
+            <span class="target">Метод прямоугольников (ср)</span>
+        </div>
+        <div class="chooseable">
+            <input class="box" type="radio" name="method" value="4">
+            <div></div>
+            <span class="target">Метод трапеций</span>
+        </div>
+        <div class="chooseable">
+            <input class="box" type="radio" name="method" value="5">
+            <div></div>
+            <span class="target">Метод Симпсона</span>
+        </div>
+    </div>
+    <div class="choose-block">
+        <div class="field">
+            <div style="display: flex; justify-content: flex-start;"><span style="margin-right: 5px;">Интервал поиска:</span><span>[</span><input class="interval" id="int1" type="text"> 
+                <span>;</span> <input class="interval" id="int2" type="text"> <span>]</span></div>
+        </div>
+        <div class="field">
+            Точность \(\epsilon = \) <input class="eps" id="eps" type="text" value="0.01" required="required">
+        </div>
+    </div>
+    <div class="choose-block">
+        <div class="field" style="text-align: center; display: flex; justify-content: center;">
+            <button onclick="solveIntegral()" class="exec-btn">Рассчитать</button>
+        </div>
+    </div>
+</div>
+<div class="answer">
+    <div class="result"></div>
+    <div class="plot"></div>
+    <div class="table"></div>
+</div>
