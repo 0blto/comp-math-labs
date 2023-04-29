@@ -1,11 +1,13 @@
 import numpy as np
+import warnings
+warnings.filterwarnings("error")
 
 equations = {
     1: lambda x: 2.3 * np.power(x, 3) + 5.75 * np.power(x, 2) - 7.41 * x - 10.6,
     2: lambda x: np.power(x, 3) - x + 4,
     3: lambda x: 2 / np.exp(x),
     4: lambda x: 1/x,
-    5: lambda x: np.power(x, 2) / (np.power(x, 3) - 1)
+    5: lambda x: (np.power(x, 2) - 4) / (x - 2)
 }
 
 antiderivatives = {
@@ -13,7 +15,7 @@ antiderivatives = {
     2: lambda x: np.power(x, 4) / 4 - np.power(x, 2) / 2 + 4 * x,
     3: lambda x: -2 * np.exp(-x),
     4: lambda x: np.log(x),
-    5: lambda x: np.log(np.power(x, 3) - 1) / 3
+    5: lambda x: x * (x + 4) / 2
 }
 
 DEFAULT_N = 4
@@ -33,38 +35,39 @@ def find_intervals(eq_num, a, b):
 
     for i in values:
         cur = round(i, 10)
-        if gap_checker(equation, cur):
-            convergence_checker(eq_num, cur)
+        if gap_checker(equation, cur, step):
+            convergence_checker(eq_num, cur, step)
             if cur_start == cur:
                 cur_start += step
                 continue
             correct_intervals.append([cur_start, cur - step])
             cur_start = cur + step
 
-    if gap_checker(equation, b):
-        convergence_checker(eq_num, b)
-        correct_intervals.append([cur_start, b - step])
+    if gap_checker(equation, b, step):
+        if cur_start < b:
+            convergence_checker(eq_num, b, step)
+            correct_intervals.append([cur_start, b - step])
     else:
         correct_intervals.append([cur_start, b])
 
     return correct_intervals
 
-def gap_checker(equation, x):
+def gap_checker(equation, x, step):
     try:
         result = equation(x)
         if abs(result) > 1e10 or np.isinf(result):
             return True
-    except Exception:
+    except Exception or RuntimeWarning:
         return True
     return False
 
 
-def convergence_checker(eq_num, x):
+def convergence_checker(eq_num, x, step):
     try:
         result = antiderivatives[eq_num](x)
         if abs(result) > 1e10:
             raise Exception("Интеграл не существует")
-    except ValueError:
+    except Exception or RuntimeWarning:
         raise Exception("Интеграл не существует")
 
 def integrate(eq_num, intervals, eps, integral_type, k):
@@ -115,3 +118,4 @@ def the_simpsons(eq_num, a, b, h):
     for i in range(2, len(data) - 2, 2):
         out += 2 * eq(data[i])
     return out * h / 3
+

@@ -1,0 +1,19 @@
+.points {
+    table-layout: fixed; border-spacing: 0;
+}
+
+.element {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #eee;
+    font-size: large;
+    min-width: 3em;
+}
+
+.element:hover, .element:focus {
+    outline: none;
+    background-color: #9b9b9b8e;
+}

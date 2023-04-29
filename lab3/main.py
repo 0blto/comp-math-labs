@@ -16,7 +16,7 @@ def start():
     return render_template('start.html')
 
 @app.route('/api/integrate', methods=['POST'])
-def integrate():
+def integrate_controller():
     try:
         return jsonify(aggregate_integral(request.get_json()))
     except Exception as ex:
@@ -24,4 +24,4 @@ def integrate():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
+    #print(aggregate_integral({'equation': 5, 'method': 1, 'left': -1, 'right': 3, 'epsilon': 0.01}))
