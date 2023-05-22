@@ -5,6 +5,16 @@ function duplicates(data) {
     return dupl
 }
 
+function upCheck(array) {
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < array[i-1]) {
+      oops('Значения X должны быть введены в порядке возрастания')
+      return false
+    }
+  }
+  return true
+}
+
 function checkDataSize(data) {
     if (data.length < 16) oops('Входной файл должен содержать от 8 до 12 точек')
     if (data.length % 2 !== 0) oops('Некорректный размер таблицы')
@@ -30,10 +40,10 @@ function fromFileData(input) {
 function correctInput(result) {
     let out = result.replace('\r', ' ').replace('\n', ' ').split(/\s+/)
     if (out[out.length - 1] == ' ' || out[out.length - 1] == '') out.pop()
-    console.log(out)
     for (let i = 0; i < out.length; i++) {out[i] = isFloat(out[i]); if (out[i] === false)  return}
 
     if (!checkDataSize(out)) return
+    if (!upCheck(out.slice(0, out.length / 2))) return
     const data = {x: out.slice(0, out.length / 2), y: out.slice(out.length / 2, out.length)}
     if (duplicates(data.x)) return
     calc(data)    
@@ -47,6 +57,7 @@ function readFromInput() {
         else con = false
     })
     if (!con) return
+    if (!upCheck(out.slice(0, out.length / 2))) return
     const data = {x: out.slice(0, out.length / 2), y: out.slice(out.length / 2, out.length)}
     if (duplicates(data.x)) return
     calc(data)
@@ -127,7 +138,7 @@ async function chooseFunction() {
     }).then(
       async function(result) {
         const answer = await recieve(
-            await requestData(link, {x: data.x, y: data.y, search: parseFloat(result.value)}), jsonReciever
+            await requestData(link, {x: data.x, y: data.y, search: parseFloat(result.value.replace(',', '.'))}), jsonReciever
           )
         Swal.fire({
           icon: 'success',

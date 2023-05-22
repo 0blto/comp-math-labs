@@ -7,7 +7,6 @@ import computations as cp
 
 def createPoints(data):
     eq, a, b, n = data['func'], data['a'], data['b'], data['n']
-    print(eq)
     return pg.generate(eq, a, b, n)
 
 def interpolate(data):

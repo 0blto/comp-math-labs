@@ -23,3 +23,9 @@
 .results th {
     background: #666666;
 }
+
+.method {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}

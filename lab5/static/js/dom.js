@@ -1,4 +1,4 @@
-const input_text = '\\(n = \\)<select class="def-inp" id="size" onchange="createMatrix()"><option selected="selected" value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select> <br> <br><div id="matrix"> </div></div>',
+const input_text = '\\(n = \\)<select class="def-inp" id="size" onchange="createMatrix()"><option selected="selected" value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select> <br> <br><div id="matrix"> </div></div>',
     file_input = '<div id="file-input"><input type="file" style="z-index: 1000;" onchange="fromFileData(this)"></div>',
     controller = '<button onclick="generateByFunction()">Generate</button><button onclick="readFromInput()">Calculate</button>'
 
@@ -112,8 +112,8 @@ function clr() {
     if (!file_mode) createMatrix()
     else document.querySelector('input[type="file"]').value = ''
     document.querySelector('.plot').innerHTML = ''
-    document.querySelector('.functions').innerHTML = ''
-    document.querySelector('.best').innerHTML = ''
+    document.querySelector('.finite-diff').innerHTML = ''
+    document.querySelector('.method').innerHTML = ''
 }
 
 document.onload = createMatrix()

@@ -44,37 +44,26 @@ def lagrangeFunc(x, y):
 
 
 def lagrangeMethod(x, y, search):
-    return lagrangeFunc(x, y)(search)
+    return round(lagrangeFunc(x, y)(search), 3)
 
 def gaussianFunc(x, y):
     def p_create(polynom, num):
-        print(num)
-        print(str(polynom) , end='')
         tempPolynom = polynom
         for i in range(1, (num+1)//2):
             tempPolynom *= (polynom-i)*(polynom+i)
-            print('(' + str(polynom-i) +')(' + str(polynom+i) + ')', end='')
         if num % 2 == 0:
             tempPolynom *= (polynom+num//2)
-            print('(' + str(polynom+num//2) +')', end = '')
         return tempPolynom
     n = len(x)
 
     def f(search):
         table = finiteDiff(x, y)[1:]
-        for i in table: print(i)
         polynom = round((search - x[n//2])/(x[1]-x[0]), 4)
-        print(polynom)
         result = table[0][n//2] + table[1][n//2-1]*polynom
-        print(str(table[0][n//2]) + '+' + str(table[1][n//2-1]) + '*t')
         for i in range(2, n):
             result += p_create(polynom, i) * table[i][(n-i-1 + isModTwo(n))//2] / fact(i)
-            print('*' + str(table[i][(n-i-1)//2]) + '/' + str(fact(i)))
         return result
     return f
 
 def gaussianMethod(x, y, search):
-    return gaussianFunc(x, y)(search)
-
-
-print(gaussianMethod([0.1, 0.2, 0.3, 0.4, 0.5], [1.25, 2.38, 3.79, 5.44, 7.14], 0.28))
+    return round(gaussianFunc(x, y)(search), 3)
