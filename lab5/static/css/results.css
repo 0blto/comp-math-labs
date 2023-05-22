@@ -1,0 +1,25 @@
+.best {
+    text-align: center;
+    font-size: x-large;
+}
+
+.plot {
+    text-align: center;
+    pointer-events: none;
+}
+
+.functions {
+    margin-bottom: 25px;
+}
+
+.results tr:hover{
+	background: #66666660;
+}
+
+.results {
+    border: 1px solid #666666;
+}
+
+.results th {
+    background: #666666;
+}

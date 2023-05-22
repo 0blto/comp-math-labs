@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
+}
+
+body {
+    margin: auto;
+    padding: 10px;
+    overflow-x: hidden;
+    text-align: left;
+    width: 90vw;
+    min-height: 100vh;
+    color: #eeeeee;
+    background-color: #212121;
+}
+
+header {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+}
+
+.logo {
+    font-size: x-large;
+    cursor: pointer;
+    user-select: none;
+}
+
+.logo-bar {
+    flex: 1;
+    text-align: left;
+}
+
+.bar {
+    flex: 1;
+    text-align: right;
+}
+
+
+.bar-a {
+    user-select: none;
+    cursor: pointer;
+}
+
+.bar-a:hover {
+    opacity: 0.7;
+}
+
+.menu {
+    padding: 20px;
+    text-align: center;
+}
+
+.block {
+    text-align: center;
+    margin-bottom: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.input {
+    white-space: nowrap;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    table-layout: fixed; 
+    border-spacing: 0;
+}
+
+th {
+    padding: 6px;
+}
+
+.controller {
+    max-width: 400px;
+    margin: auto;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    font-size: large;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+button:hover {
+    box-shadow: 0 0 10px 2px #eee;
+}
+
+button:focus {
+    animation: def 0.7s ease-in-out;
+}
+
+.def-inp {
+    background-color: #eee;
+    padding: 3px;
+    text-align: center;
+    width: 5em;
+}
+
+.def-inp:focus {
+    outline: none;
+}
+
+#size {
+    padding: 5px;
+    background-color: #eee;
+    border: none;
+}
+
+#size:hover {
+    outline: none;
+}
+
+#matrix {
+    overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(37, 37, 37, 0.774);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(75, 75, 75, 0.753);
+    width: 10px;
+    border: none;
+}
+
+@keyframes def {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(0.9);
+    }
+    80% {
+        transform: scale(1);
+    }
+}

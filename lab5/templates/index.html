@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/defaults.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/file.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/points.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/results.css" />
+    <title>Interpolation</title>
+    
+</head>
+<body>
+    <div style="max-width: 1280px; margin: auto;">
+        <header>
+            <div class="logo-bar">
+                <span class="logo">Interpolation</span>
+            </div>
+            <div class="bar">
+                <a onclick="share()" class="bar-a">Info</a>
+                <a style="margin-left: 20px;" id="switch" class="bar-a">Change input type</a>
+                <a style="margin-left: 20px;" onclick="clr()" class="bar-a">Clear</a>
+            </div>
+            
+        </header>
+        <div class="menu block">
+            <div class="input block">
+                
+                <div class="switch-container">
+                
+                    <div id="text-input">
+                        \(n = \) <select id="size" class="def-inp" onchange="createMatrix()">
+                            <option selected="selected" value="5">5</option>
+                            {% for i in range(6, 11) %}
+                            <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                            </select> <br> <br>
+                    
+                        <div id="matrix"> </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controller block">
+                <button onclick="generateByFunction()">Generate</button>
+                <button onclick="readFromInput()">Calculate</button>
+            </div>
+        </div>
+    </div>
+    <div style="max-width: 1920px; margin: auto;">
+        <div class="plot"></div>
+        <div class="finite-diff"></div>
+        <div class="method"></div>
+    </div>
+
+
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../static/js/requester.js"></script>
+    <script src="../static/js/reciever.js"></script>
+    <script src="../static/js/dom.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/inputManager.js"></script>
+</body>
+</html>
