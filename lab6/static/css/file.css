@@ -1,0 +1,18 @@
+input[type=file] {
+    width: 100%;
+    border: 2px dashed #eee;
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 400px;
+    transition: 0.5s;
+}
+
+input[type=file]:hover {
+    border: 2px solid #eee;
+}
+
+::-webkit-file-upload-button{
+    border: none;
+    background-color:transparent;
+    color: #eee;
+}

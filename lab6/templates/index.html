@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/defaults.css" />
+    <link rel="stylesheet" href="../static/css/file.css">
+    <link rel="stylesheet" href="../static/css/primitives.css">
+    <title>Lab 6</title>
+    
+</head>
+<body>
+    
+    <header>
+        <div class="logo-bar">
+            <span class="logo">ODU Solution</span>
+        </div>
+        <nav>
+            <a onclick="share()" class="bar-a">Info</a>
+            <a onclick="clr()" class="bar-a">Clear</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="menu">
+            <div class="choose-block">
+                <h4 style="margin-bottom: 15px;">Выбор уравнения</h4>
+                <div class="equation chooseable">
+                    <input class="box" type="radio" name="equations" value="1" checked>
+                    <div></div>
+                    <span class="target">$$x+y$$</span>
+                </div>
+                <div class="equation chooseable">
+                    <input class="box" type="radio" name="equations" value="2">
+                    <div></div>
+                    <span class="target">$$xy$$</span>
+                </div>
+                <div class="equation chooseable">
+                    <input class="box" type="radio" name="equations" value="3">
+                    <div></div>
+                    <span class="target">$$xy+y^2$$</span>
+                </div>
+            </div>
+            <div class="choose-block">
+                <h4 style="margin-bottom: 15px;">Выбор метода</h4>
+                <div class="chooseable">
+                    <input class="box" type="radio" name="method" value="1" checked>
+                    <div></div>
+                    <span class="target">Усовершенствованный метод Эйлера</span>
+                </div>
+                <div class="chooseable">
+                    <input class="box" type="radio" name="method" value="2">
+                    <div></div>
+                    <span class="target">Метод Рунге-Кутта 4-го порядка</span>
+                </div>
+                <div class="chooseable">
+                    <input class="box" type="radio" name="method" value="3">
+                    <div></div>
+                    <span class="target">Метод Милна</span>
+                </div>
+            </div>
+            <div class="choose-block">
+                <div class="field">
+                    <div style="display: flex; justify-content: flex-start;"><span style="margin-right: 5px;">Начальное приближение </span><span>(</span><input class="interval" id="int1" type="text">
+                        <span>;</span> <input class="interval" id="int2" type="text"> <span>)</span></div>
+                </div>
+                <div class="field">
+                    Точность \(\epsilon = \) <input class="eps" id="eps" type="text" value="0.01" required="required">
+                </div>
+                <div class="field">
+                    Длина интервала <input class="eps" id="interval" type="text" required="required">
+                </div>
+                <div class="field">
+                    Длина шага <input class="eps" id="h" type="text" required="required">
+                </div>
+            </div>
+            <div class="choose-block">
+                <div class="field" style="text-align: center; display: flex; justify-content: center;">
+                    <button onclick="solveIntegral()" class="exec-btn">Рассчитать</button>
+                </div>
+            </div>
+        </div>
+        <div class="answer">
+            <div class="plot"></div>
+            <div class="table"></div>
+        </div>
+    </main>
+
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../static/js/pops.js"></script>
+    <script src="../static/js/dom.js"></script>
+    <script src="../static/js/checks.js"></script>
+    <script src="../static/js/getters.js"></script>
+    <script src="../static/js/reciever.js"></script>
+    <script src="../static/js/requester.js"></script>
+    <script src="../static/js/integrals.js"></script>
+</body>
+</html>
