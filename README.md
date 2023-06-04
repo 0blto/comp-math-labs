@@ -4,6 +4,8 @@
 Красивый вывод мат. выражений - MathJax <br>
 Графики - matplotlib <br>
 
+<img src="lab1/static/resources/achi-kochi.gif" alt="UwU" style="margin: auto;" width="50%">
+
 <h3>lab1 - Решение систем линейных уравнений</h3>
 <ul><li>Метод Гаусса-Зейделя</li></ul>
 <h3>lab2 - Решение нелинейных уравнений и систем</h3>
