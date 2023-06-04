@@ -45,3 +45,5 @@ def plot_solution(data):
              )
     ).print_png(bts)
     return bts.getvalue()
+
+#print(diff_equation_worker({'x': 1, 'y': -1, 'epsilon': 0.0000001, 'len': 5, 'h': 1, 'equation': 3, 'method': 3}))
