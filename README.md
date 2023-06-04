@@ -1,7 +1,7 @@
 # Вычислительная математика
 
 Фреймворк - Flask <br>
-Красивый вывод мат. выражений - MathJax <br>
+Вывод мат. выражений - MathJax <br>
 Графики - matplotlib <br>
 
 <img src="lab1/static/resources/achi-kochi.gif" alt="UwU" style="margin: auto;" width="10%">
